@@ -18,12 +18,12 @@ for each in dummy_fields:
     contest_basic_train = pd.concat([contest_basic_train, dummies], axis=1)
 contest_basic_train = contest_basic_train.drop(dummy_fields, axis=1)
 
-# quant_features = ['SALARY']
-# scaled_features = {}
-# for each in quant_features:
-#     mean, std = contest_basic_train[each].mean(), contest_basic_train[each].std()
-#     scaled_features[each] = [mean, std]
-#     contest_basic_train.loc[:, each] = (contest_basic_train[each] - mean)/std
+quant_features = ['SALARY']
+scaled_features = {}
+for each in quant_features:
+    mean, std = contest_basic_train[each].mean(), contest_basic_train[each].std()
+    scaled_features[each] = [mean, std]
+    contest_basic_train.loc[:, each] = (contest_basic_train[each] - mean)/std
 
 print(contest_basic_train.head(3))
 for key in contest_basic_train.keys():
