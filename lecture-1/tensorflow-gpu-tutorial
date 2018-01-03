@@ -1,0 +1,26 @@
+* install nvidia-drivers
+~$           sudo apt purge nvidia-*
+~$           sudo add-apt-repository ppa:graphics-drivers/ppa
+~$           sudo apt update
+~$           sudo apt-get install nvidia-384
+
+
+* install anaconda
+~/Downloads$ bash '/home/lizheng/Downloads/Anaconda3-4.4.0-Linux-x86_64.sh' 
+~/Downloads$ gedit ~/.bashrc
+.bashrc$     export PATH=/home/lizheng/anaconda3/bin:$PATH
+~/Downloads$ cd
+~$           source .bashrc
+
+
+* create new python virtualenv
+~$           conda create -n tfenv tensorflow-gpu
+~$           activate tfenv
+~$           pip install keras
+~$           deactivate
+
+
+* install package
+~$           pip install matplotlib
+~$           pip install pandas
+~$           pip install pyqt5
